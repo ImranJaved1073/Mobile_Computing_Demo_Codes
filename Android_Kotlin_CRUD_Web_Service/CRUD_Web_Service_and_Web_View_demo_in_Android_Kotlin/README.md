@@ -1,0 +1,1 @@
+this is demo application to provide example code for web-view and web-service, this code base assumes that a simple web server is running on a host machine while this application is executing on android virtual machine.
