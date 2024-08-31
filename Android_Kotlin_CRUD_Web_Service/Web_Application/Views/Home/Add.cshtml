@@ -4,25 +4,44 @@
     ViewData["Title"] = "Add Student";
 }
 
-<div class="container mt-4">
-    <h2>Add Student</h2>
-    <form asp-action="Add" method="post">
-        <div class="mb-3">
-            <label asp-for="Name" class="form-label">Name</label>
-            <input asp-for="Name" class="form-control" required />
-        </div>
-        <div class="mb-3">
-            <label asp-for="RollNo" class="form-label">Roll No</label>
-            <input asp-for="RollNo" class="form-control" required />
-        </div>
-        <div class="mb-3">
-            <label asp-for="CGPA" class="form-label">CGPA</label>
-            <input asp-for="CGPA" class="form-control" type="number" step="0.01" required />
-        </div>
-        <div class="mb-3">
-            <label asp-for="Age" class="form-label">Age</label>
-            <input asp-for="Age" class="form-control" type="number" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Add Student</button>
-    </form>
+<div class="flex items-center justify-center bg-gray">
+    <div class="bg-gray shadow-lg rounded-lg p-8 w-full max-w-md">
+        <h2 class="text-3xl font-semibold text-center mb-8 text-gray-800">Add Student</h2>
+        <form asp-action="Add" method="post" class="space-y-6">
+            <div class="space-y-4">
+                <!-- Name Field -->
+                <div>
+                    <label asp-for="Name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input asp-for="Name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter student name" required>
+                    <span asp-validation-for="Name" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Roll No Field -->
+                <div>
+                    <label asp-for="RollNo" class="block text-sm font-medium text-gray-700">Roll No</label>
+                    <input asp-for="RollNo" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter roll number" required>
+                    <span asp-validation-for="RollNo" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- CGPA Field -->
+                <div>
+                    <label asp-for="CGPA" class="block text-sm font-medium text-gray-700">CGPA</label>
+                    <input asp-for="CGPA" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter CGPA" step="0.01" required>
+                    <span asp-validation-for="CGPA" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Age Field -->
+                <div>
+                    <label asp-for="Age" class="block text-sm font-medium text-gray-700">Age</label>
+                    <input asp-for="Age" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter age" required>
+                    <span asp-validation-for="Age" class="text-red-500 text-sm"></span>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-6">
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add Student</button>
+            </div>
+        </form>
+    </div>
 </div>

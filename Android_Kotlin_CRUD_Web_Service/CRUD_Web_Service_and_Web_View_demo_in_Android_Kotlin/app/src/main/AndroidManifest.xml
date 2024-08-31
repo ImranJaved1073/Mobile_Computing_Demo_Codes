@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".UpdatePostWebServiceDemoActivity"
+            android:exported="false" />
+        <activity
             android:name=".PostRequestWebServiceDemoActivity"
             android:exported="false" />
         <activity

@@ -4,27 +4,32 @@
     ViewData["Title"] = "View All Students";
 }
 
-<div class="container mt-4">
-    <h2>Student List</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Roll No</th>
-                <th>Name</th>
-                <th>CGPA</th>
-                <th>Age</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var student in Model)
-            {
+
+
+
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-semibold mb-4">Student List</h2>
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-200">
+            <thead class="bg-gray-100">
                 <tr>
-                    <td>@student.RollNo</td>
-                    <td>@student.Name</td>
-                    <td>@student.CGPA</td>
-                    <td>@student.Age</td>
+                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 border-b">Roll No</th>
+                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 border-b">Name</th>
+                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 border-b">CGPA</th>
+                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 border-b">Age</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="py-2 px-4 text-sm text-gray-600">@student.RollNo</td>
+                        <td class="py-2 px-4 text-sm text-gray-600">@student.Name</td>
+                        <td class="py-2 px-4 text-sm text-gray-600">@student.CGPA</td>
+                        <td class="py-2 px-4 text-sm text-gray-600">@student.Age</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

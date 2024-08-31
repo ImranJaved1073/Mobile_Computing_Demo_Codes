@@ -30,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Roll No: 12345"
+                android:fontFamily="@font/ubuntu"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="@android:color/black" />
@@ -39,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="John Doe"
+                android:fontFamily="@font/ubuntu"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="@android:color/black" />
@@ -56,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Age: 20"
+                android:fontFamily="@font/ubuntu"
                 android:textSize="14sp"
                 android:textColor="@android:color/darker_gray" />
 
@@ -64,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CGPA: 3.5"
+                android:fontFamily="@font/ubuntu"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_blue_dark" />

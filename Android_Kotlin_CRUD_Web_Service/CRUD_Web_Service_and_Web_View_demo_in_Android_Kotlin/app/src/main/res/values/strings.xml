@@ -12,7 +12,8 @@
     <string name="add_Student">Add Student</string>
     <string name="view_btn">View All</string>
     <string name="list_of_students">List Of Students</string>
-
+    <string name="update_Student">Update Student</string>
+    <string name="update_btn">Update</string>
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus

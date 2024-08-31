@@ -45,10 +45,65 @@ namespace WebApplication4.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return StatusCode(500, new { success = false, message = "An error occurred while adding the student." });
+                    return StatusCode(500, new { success = false, message = "An error occurred while adding the student." + ex.Message });
                 }
             }
             return BadRequest(new { success = false, message = "Invalid input data." });
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var student = await _studentRepository.GetStudentByIdAsync(id);
+            return View(student);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                await _studentRepository.UpdateStudentAsync(student);
+                return RedirectToAction("ViewAll");
+            }
+            return View(student);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateStudent([FromBody] Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _studentRepository.UpdateStudentAsync(student);
+                    return Json(new { success = true, message = "Student updated successfully!" });
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, new { success = false, message = "An error occurred while updating the student." + ex.Message });
+                }
+            }
+            return BadRequest(new { success = false, message = "Invalid input data." });
+        }
+
+        public async Task<IActionResult> Delete(string rollNo)
+        {
+            await _studentRepository.DeleteStudentAsync(rollNo);
+            return RedirectToAction("ViewAll");
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteStudent(string rollNo)
+        {
+            try
+            {
+                await _studentRepository.DeleteStudentAsync(rollNo);
+                return Json(new { success = true, message = "Student deleted successfully!" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = "An error occurred while deleting the student." + ex.Message });
+            }
         }
 
 

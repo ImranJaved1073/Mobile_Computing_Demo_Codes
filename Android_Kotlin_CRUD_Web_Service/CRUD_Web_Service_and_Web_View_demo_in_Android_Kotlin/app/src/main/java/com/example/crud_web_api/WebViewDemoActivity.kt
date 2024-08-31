@@ -14,6 +14,6 @@ class WebViewDemoActivity : Activity() {
         setContentView(R.layout.activity_web_view_demo)
         webView = findViewById(R.id.webView)
         webView.webViewClient = WebViewClient() // Ensures links are opened within the WebView
-        webView.loadUrl("http://192.168.100.11:5178/Home/ViewAll") // Replace with your URL
+        webView.loadUrl("http://172.16.9.85:5178/Home/ViewAll") // Replace with your URL
     }
 }
